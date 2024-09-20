@@ -1,0 +1,34 @@
+import turtle
+def setUp(t,length,col):
+    t.penup()
+    t.forward(length)
+    t.pendown()
+    t.color(col)
+        
+
+def triangle(t,length):
+    if length > 10:
+        for i in range(3):
+            t.forward(length)
+            t.left(120)
+        triangle(t,length/2)
+        
+def nestedTriangle(t,length):
+    if length > 10:
+        for i in range(3):
+            t.forward(length)
+            t.left(120)
+            nestedTriangle(t,length/2)
+def main():
+    n= int(input("Enter length: "))
+    
+    Jackie = turtle.Turtle()
+    setUp(Jackie,-100, "darkgreen")
+    triangle(Jackie, n)
+
+    Esmin = turtle.Turtle()
+    setUp(Esmin,100, "steelblue")
+    nestedTriangle(Esmin, n)
+    
+if __name__ == "__main__":
+    main()
